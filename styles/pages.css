@@ -1,0 +1,229 @@
+/* ============================================
+   HTML5 Master - Page Styles
+   Styles for learning module pages
+   ============================================ */
+
+/* Page Header */
+.page-header {
+    padding: calc(var(--space-24) + 60px) 0 var(--space-12);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-4);
+}
+
+.breadcrumb a:hover {
+    color: var(--color-primary-light);
+}
+
+.header-content {
+    max-width: 700px;
+    margin-bottom: var(--space-6);
+}
+
+.header-content h1 {
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl));
+    margin: var(--space-4) 0;
+}
+
+.header-content p {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    max-width: 400px;
+}
+
+.progress-container .progress-bar {
+    flex: 1;
+}
+
+.progress-text {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* Content Layout */
+.page-content {
+    padding: var(--space-12) 0 var(--space-24);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+}
+
+@media (min-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 250px 1fr;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .sidebar {
+        display: block;
+    }
+}
+
+/* Main Content */
+.main-content {
+    max-width: 800px;
+}
+
+.lesson-section {
+    padding-bottom: var(--space-12);
+    margin-bottom: var(--space-12);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.lesson-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.lesson-section h2 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-6);
+    color: var(--text-primary);
+}
+
+.lesson-section h3 {
+    font-size: var(--text-xl);
+    margin: var(--space-8) 0 var(--space-4);
+    color: var(--text-primary);
+}
+
+.lesson-section p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+    line-height: 1.8;
+}
+
+.lesson-section code {
+    padding: var(--space-1) var(--space-2);
+    font-size: 0.9em;
+    color: var(--color-accent);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+}
+
+/* Feature List */
+.feature-list {
+    margin: var(--space-4) 0;
+    padding-left: var(--space-6);
+}
+
+.feature-list li {
+    position: relative;
+    padding: var(--space-2) 0;
+    color: var(--text-secondary);
+    list-style: disc;
+}
+
+/* Info Cards */
+.info-cards {
+    display: grid;
+    gap: var(--space-4);
+    margin: var(--space-6) 0;
+}
+
+.info-cards.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.info-card {
+    padding: var(--space-5);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+}
+
+.info-card h4 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-2);
+    color: var(--color-primary-light);
+}
+
+.info-card p {
+    font-size: var(--text-sm);
+    margin: 0;
+}
+
+/* Comparison Table */
+.comparison-table {
+    margin: var(--space-6) 0;
+    overflow-x: auto;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+    background: var(--bg-tertiary);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.comparison-table td {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+}
+
+.comparison-table mark {
+    padding: var(--space-1) var(--space-2);
+    background: rgba(245, 158, 11, 0.3);
+    border-radius: var(--radius-sm);
+}
+
+/* Next Section CTA */
+.next-section {
+    padding: var(--space-10);
+    text-align: center;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-2xl);
+    margin-top: var(--space-12);
+}
+
+.next-section h3 {
+    font-size: var(--text-2xl);
+    color: white;
+    margin-bottom: var(--space-3);
+}
+
+.next-section p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-6);
+}
+
+.next-section .btn-primary {
+    background: white;
+    color: var(--color-primary);
+}

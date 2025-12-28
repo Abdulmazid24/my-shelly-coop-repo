@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="HTML5 বেসিক শিখুন - Document structure, elements, attributes এবং text formatting সহ মৌলিক বিষয়গুলো।">
+    <title>HTML5 বেসিক | HTML5 মাস্টারক্লাস</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/pages.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">HTML5<span class="logo-accent">মাস্টার</span></span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">হোম</a></li>
+                <li class="nav-item"><a href="basics.html" class="nav-link active">বেসিক</a></li>
+                <li class="nav-item"><a href="intermediate.html" class="nav-link">ইন্টারমিডিয়েট</a></li>
+                <li class="nav-item"><a href="advanced.html" class="nav-link">অ্যাডভান্সড</a></li>
+                <li class="nav-item"><a href="phd-level.html" class="nav-link">PhD লেভেল</a></li>
+                <li class="nav-item"><a href="playground.html" class="nav-link">প্লেগ্রাউন্ড</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                        </path>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">হোম</a>
+                <span>/</span>
+                <span>বেসিক</span>
+            </div>
+            <div class="header-content">
+                <span class="level-badge level-basic">📖 বেসিক লেভেল</span>
+                <h1>HTML5 ফাউন্ডেশন</h1>
+                <p>HTML5 এর মৌলিক বিষয়গুলো শিখুন - document structure থেকে শুরু করে elements এবং attributes পর্যন্ত।
+                </p>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="progress-text">0% সম্পন্ন</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="content-grid">
+
+                <!-- Sidebar TOC -->
+                <aside class="sidebar">
+                    <div class="toc">
+                        <h3 class="toc-title">বিষয়বস্তু</h3>
+                        <ul class="toc-list">
+                            <li><a href="#what-is-html" class="toc-link active">HTML কি?</a></li>
+                            <li><a href="#first-page" class="toc-link">প্রথম HTML পেজ</a></li>
+                            <li><a href="#document-structure" class="toc-link">Document Structure</a></li>
+                            <li><a href="#elements" class="toc-link">Elements & Tags</a></li>
+                            <li><a href="#attributes" class="toc-link">Attributes</a></li>
+                            <li><a href="#headings" class="toc-link">Headings</a></li>
+                            <li><a href="#paragraphs" class="toc-link">Paragraphs</a></li>
+                            <li><a href="#text-formatting" class="toc-link">Text Formatting</a></li>
+                            <li><a href="#links" class="toc-link">Links</a></li>
+                            <li><a href="#images" class="toc-link">Images</a></li>
+                            <li><a href="#comments" class="toc-link">Comments</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Main Content Area -->
+                <article class="main-content">
+
+                    <!-- Section: What is HTML -->
+                    <section id="what-is-html" class="lesson-section">
+                        <h2>🌟 HTML কি?</h2>
+
+                        <p><strong>HTML</strong> (HyperText Markup Language) হলো ওয়েব পেজ তৈরির মূল ভাষা। এটি কোনো
+                            প্রোগ্রামিং ভাষা নয়, বরং একটি <em>markup language</em> যা ওয়েব ব্রাউজারকে বলে দেয় কীভাবে
+                            content প্রদর্শন করতে হবে।</p>
+
+                        <div class="alert alert-info">
+                            <span class="alert-icon">💡</span>
+                            <div class="alert-content">
+                                <h4>জানা ভালো</h4>
+                                <p>HTML5 হলো HTML এর সর্বশেষ version (2014 সালে প্রকাশিত)। এতে audio, video, canvas সহ
+                                    অনেক নতুন features যোগ হয়েছে।</p>
+                            </div>
+                        </div>
+
+                        <h3>HTML এর ইতিহাস</h3>
+                        <ul class="feature-list">
+                            <li><strong>1991:</strong> Tim Berners-Lee HTML তৈরি করেন</li>
+                            <li><strong>1995:</strong> HTML 2.0 প্রকাশিত</li>
+                            <li><strong>1997:</strong> HTML 3.2 এবং HTML 4.0</li>
+                            <li><strong>2014:</strong> HTML5 officially recommended</li>
+                            <li><strong>2017:</strong> HTML 5.2 (সর্বশেষ version)</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section: First HTML Page -->
+                    <section id="first-page" class="lesson-section">
+                        <h2>🚀 প্রথম HTML পেজ</h2>
+
+                        <p>চলুন আপনার প্রথম HTML পেজ তৈরি করি! একটি text editor (যেমন VS Code, Notepad++) খুলে নিচের কোড
+                            লিখুন:</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span>আমার প্রথম ওয়েবসাইট<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Hello World! 🎉<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>এটি আমার প্রথম ওয়েব পেজ।<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success">
+                            <span class="alert-icon">✅</span>
+                            <div class="alert-content">
+                                <h4>চেষ্টা করুন!</h4>
+                                <p>ফাইলটি <code>index.html</code> নামে save করুন এবং ব্রাউজারে খুলুন।</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Document Structure -->
+                    <section id="document-structure" class="lesson-section">
+                        <h2>📄 Document Structure</h2>
+
+                        <p>প্রতিটি HTML5 document এই মৌলিক structure অনুসরণ করে:</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- DOCTYPE declaration - HTML5 ব্যবহার করছি --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+
+<span class="comment">&lt;!-- Root element - সবকিছু এর ভিতরে থাকে --&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"bn"</span><span class="tag">&gt;</span>
+
+  <span class="comment">&lt;!-- Head section - metadata থাকে --&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>পেজ টাইটেল<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+
+  <span class="comment">&lt;!-- Body section - visible content থাকে --&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="comment">&lt;!-- আপনার content এখানে --&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+
+<span class="tag">&lt;/html&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <h3>প্রতিটি অংশের ব্যাখ্যা:</h3>
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <h4><code>&lt;!DOCTYPE html&gt;</code></h4>
+                                <p>ব্রাউজারকে বলে এটি HTML5 document। এটি ছাড়া browser "quirks mode" এ চলতে পারে।</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;html&gt;</code></h4>
+                                <p>Root element - পুরো document এর container। <code>lang</code> attribute ভাষা নির্দেশ
+                                    করে।</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;head&gt;</code></h4>
+                                <p>Metadata container - title, charset, stylesheets, scripts ইত্যাদি থাকে। পেজে দেখা
+                                    যায় না।</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;body&gt;</code></h4>
+                                <p>পেজের সব visible content এখানে থাকে - text, images, links, forms ইত্যাদি।</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Elements & Tags -->
+                    <section id="elements" class="lesson-section">
+                        <h2>🏷️ Elements & Tags</h2>
+
+                        <p>HTML <strong>elements</strong> হলো HTML পেজের building blocks। প্রতিটি element
+                            <strong>tags</strong> দিয়ে তৈরি।</p>
+
+                        <div class="demo-container">
+                            <div class="demo-header">
+                                <span class="demo-title">Element এর গঠন</span>
+                            </div>
+                            <div class="demo-preview"
+                                style="text-align: center; font-family: monospace; font-size: 1.25rem;">
+                                <div style="display: inline-block; text-align: left;">
+                                    <span style="color: #f472b6;">&lt;p&gt;</span><span
+                                        style="color: var(--text-primary);">Hello World</span><span
+                                        style="color: #f472b6;">&lt;/p&gt;</span>
+                                    <div
+                                        style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">
+                                        <span>↑ Opening Tag</span>
+                                        <span>↑ Content</span>
+                                        <span>↑ Closing Tag</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Tag এর প্রকারভেদ:</h3>
+
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>প্রকার</th>
+                                        <th>উদাহরণ</th>
+                                        <th>বিবরণ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="tag-primary tag">Container Tags</span></td>
+                                        <td><code>&lt;p&gt;...&lt;/p&gt;</code></td>
+                                        <td>Opening এবং closing tag দুটোই থাকে</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="tag-success tag">Empty/Void Tags</span></td>
+                                        <td><code>&lt;br&gt;, &lt;img&gt;</code></td>
+                                        <td>শুধু opening tag, কোনো content নেই</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-content">
+                                <h4>গুরুত্বপূর্ণ!</h4>
+                                <p>HTML tags case-insensitive, কিন্তু lowercase ব্যবহার করা best practice।</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Attributes -->
+                    <section id="attributes" class="lesson-section">
+                        <h2>⚙️ Attributes</h2>
+
+                        <p><strong>Attributes</strong> elements এ additional information যোগ করে। Opening tag এর ভিতরে
+                            থাকে।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- Syntax: attribute="value" --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://example.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span><span class="tag">&gt;</span>Visit<span class="tag">&lt;/a&gt;</span>
+
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"photo.jpg"</span> <span class="attr">alt</span>=<span class="string">"My Photo"</span> <span class="attr">width</span>=<span class="string">"300"</span><span class="tag">&gt;</span>
+
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"name"</span> <span class="attr">class</span>=<span class="string">"input-field"</span> <span class="attr">required</span><span class="tag">&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <h3>সাধারণ Global Attributes:</h3>
+                        <div class="info-cards grid-2">
+                            <div class="info-card">
+                                <h4><code>id</code></h4>
+                                <p>Unique identifier - প্রতি পেজে একবারই ব্যবহার করা যায়</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>class</code></h4>
+                                <p>CSS styling এর জন্য - একাধিক element এ ব্যবহার করা যায়</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>style</code></h4>
+                                <p>Inline CSS styles - সরাসরি element এ style দেওয়া</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>title</code></h4>
+                                <p>Tooltip text - hover করলে দেখা যায়</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Headings -->
+                    <section id="headings" class="lesson-section">
+                        <h2>📝 Headings (শিরোনাম)</h2>
+
+                        <p>HTML এ ৬ লেভেলের heading আছে - <code>&lt;h1&gt;</code> (সবচেয়ে বড়) থেকে
+                            <code>&lt;h6&gt;</code> (সবচেয়ে ছোট)।</p>
+
+                        <div class="demo-container">
+                            <div class="demo-header">
+                                <span class="demo-title">Live Preview</span>
+                            </div>
+                            <div class="demo-preview">
+                                <h1 style="margin: 0.5rem 0;">H1 - প্রধান শিরোনাম</h1>
+                                <h2 style="margin: 0.5rem 0;">H2 - উপ শিরোনাম</h2>
+                                <h3 style="margin: 0.5rem 0;">H3 - সেকশন শিরোনাম</h3>
+                                <h4 style="margin: 0.5rem 0;">H4 - সাব-সেকশন</h4>
+                                <h5 style="margin: 0.5rem 0;">H5 - ছোট শিরোনাম</h5>
+                                <h6 style="margin: 0.5rem 0;">H6 - সবচেয়ে ছোট</h6>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <span class="alert-icon">🎯</span>
+                            <div class="alert-content">
+                                <h4>SEO Tips</h4>
+                                <p>প্রতি পেজে একটি <code>&lt;h1&gt;</code> ব্যবহার করুন। Headings ক্রমানুসারে রাখুন (h1
+                                    → h2 → h3)।</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Paragraphs -->
+                    <section id="paragraphs" class="lesson-section">
+                        <h2>📄 Paragraphs</h2>
+
+                        <p><code>&lt;p&gt;</code> tag দিয়ে paragraph তৈরি করা হয়। Browser automatically উপরে ও নিচে
+                            margin যোগ করে।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="tag">&lt;p&gt;</span>এটি প্রথম paragraph। HTML এ space এবং line breaks 
+   collapse হয়ে যায়।<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>এটি দ্বিতীয় paragraph।<span class="tag">&lt;br&gt;</span>
+এখানে line break আছে।<span class="tag">&lt;/p&gt;</span>
+
+<span class="tag">&lt;hr&gt;</span> <span class="comment">&lt;!-- Horizontal Rule --&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>এটি তৃতীয় paragraph।<span class="tag">&lt;/p&gt;</span></code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Text Formatting -->
+                    <section id="text-formatting" class="lesson-section">
+                        <h2>✨ Text Formatting</h2>
+
+                        <p>HTML এ বিভিন্ন text formatting tags আছে:</p>
+
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tag</th>
+                                        <th>উদ্দেশ্য</th>
+                                        <th>Output</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>&lt;strong&gt;</code></td>
+                                        <td>গুরুত্বপূর্ণ text (bold)</td>
+                                        <td><strong>Bold Text</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>&lt;em&gt;</code></td>
+                                        <td>Emphasis (italic)</td>
+                                        <td><em>Italic Text</em></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>&lt;mark&gt;</code></td>
+                                        <td>Highlighted text</td>
+                                        <td><mark>Highlighted</mark></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>&lt;del&gt;</code></td>
+                                        <td>Deleted text</td>
+                                        <td><del>Deleted</del></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>&lt;ins&gt;</code></td>
+                                        <td>Inserted text</td>
+                                        <td><ins>Inserted</ins></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>&lt;sub&gt;</code></td>
+                                        <td>Subscript</td>
+                                        <td>H<sub>2</sub>O</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>&lt;sup&gt;</code></td>
+                                        <td>Superscript</td>
+                                        <td>X<sup>2</sup></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>&lt;code&gt;</code></td>
+                                        <td>Code text</td>
+                                        <td><code>console.log()</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Section: Links -->
+                    <section id="links" class="lesson-section">
+                        <h2>🔗 Links (হাইপারলিংক)</h2>
+
+                        <p><code>&lt;a&gt;</code> (anchor) tag দিয়ে links তৈরি করা হয়। <code>href</code> attribute এ
+                            URL থাকে।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- External Link --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://google.com"</span><span class="tag">&gt;</span>Google এ যান<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- New Tab এ Open --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://google.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span><span class="tag">&gt;</span>New Tab<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Internal Page Link --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"about.html"</span><span class="tag">&gt;</span>About Page<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Same Page Section (Anchor) --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"#contact"</span><span class="tag">&gt;</span>Contact Section এ যান<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Email Link --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"mailto:info@example.com"</span><span class="tag">&gt;</span>Email করুন<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Phone Link --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"tel:+8801234567890"</span><span class="tag">&gt;</span>Call করুন<span class="tag">&lt;/a&gt;</span></code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Images -->
+                    <section id="images" class="lesson-section">
+                        <h2>🖼️ Images</h2>
+
+                        <p><code>&lt;img&gt;</code> tag দিয়ে image যোগ করা হয়। এটি একটি <em>void element</em> - কোনো
+                            closing tag নেই।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- Basic Image --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"photo.jpg"</span> <span class="attr">alt</span>=<span class="string">"ফটো বর্ণনা"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- With Dimensions --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"logo.png"</span> <span class="attr">alt</span>=<span class="string">"Logo"</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"100"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- From URL --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"https://example.com/image.jpg"</span> <span class="attr">alt</span>=<span class="string">"External Image"</span><span class="tag">&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-danger">
+                            <span class="alert-icon">🚨</span>
+                            <div class="alert-content">
+                                <h4>অবশ্যই মনে রাখবেন!</h4>
+                                <p><code>alt</code> attribute বাধ্যতামূলক! এটি accessibility এবং SEO এর জন্য অত্যন্ত
+                                    গুরুত্বপূর্ণ।</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Comments -->
+                    <section id="comments" class="lesson-section">
+                        <h2>💬 Comments</h2>
+
+                        <p>Comments browser এ দেখা যায় না, কিন্তু code বুঝতে সাহায্য করে।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- এটি একটি single line comment --&gt;</span>
+
+<span class="comment">&lt;!-- 
+  এটি একটি 
+  multi-line comment 
+--&gt;</span>
+
+<span class="tag">&lt;p&gt;</span>এই text দেখা যাবে<span class="tag">&lt;/p&gt;</span>
+<span class="comment">&lt;!-- &lt;p&gt;এই text দেখা যাবে না&lt;/p&gt; --&gt;</span></code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Next Section CTA -->
+                    <div class="next-section">
+                        <h3>🎉 অভিনন্দন!</h3>
+                        <p>আপনি HTML5 বেসিক সম্পন্ন করেছেন। এখন intermediate level এ যান!</p>
+                        <a href="intermediate.html" class="btn btn-primary btn-lg">
+                            <span>ইন্টারমিডিয়েট Level</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 HTML5মাস্টার। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
