@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML5 ইন্টারমিডিয়েট - Forms, Tables, Semantic HTML এবং Media Elements শিখুন।">
+    <title>ইন্টারমিডিয়েট HTML5 | HTML5 মাস্টারক্লাস</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/pages.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">HTML5<span class="logo-accent">মাস্টার</span></span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">হোম</a></li>
+                <li class="nav-item"><a href="basics.html" class="nav-link">বেসিক</a></li>
+                <li class="nav-item"><a href="intermediate.html" class="nav-link active">ইন্টারমিডিয়েট</a></li>
+                <li class="nav-item"><a href="advanced.html" class="nav-link">অ্যাডভান্সড</a></li>
+                <li class="nav-item"><a href="phd-level.html" class="nav-link">PhD লেভেল</a></li>
+                <li class="nav-item"><a href="playground.html" class="nav-link">প্লেগ্রাউন্ড</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                        </path>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span
+                        class="hamburger"></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">হোম</a><span>/</span><span>ইন্টারমিডিয়েট</span>
+            </div>
+            <div class="header-content">
+                <span class="level-badge level-intermediate">🎯 ইন্টারমিডিয়েট লেভেল</span>
+                <h1>ফর্ম, টেবিল ও সেমান্টিক HTML</h1>
+                <p>Forms, Tables, Lists, Semantic Elements এবং Media Elements সহ HTML5 এর intermediate বিষয়গুলো শিখুন।
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="toc">
+                        <h3 class="toc-title">বিষয়বস্তু</h3>
+                        <ul class="toc-list">
+                            <li><a href="#forms" class="toc-link active">Forms পরিচিতি</a></li>
+                            <li><a href="#input-types" class="toc-link">Input Types</a></li>
+                            <li><a href="#form-validation" class="toc-link">Form Validation</a></li>
+                            <li><a href="#lists" class="toc-link">Lists</a></li>
+                            <li><a href="#tables" class="toc-link">Tables</a></li>
+                            <li><a href="#semantic" class="toc-link">Semantic HTML</a></li>
+                            <li><a href="#media" class="toc-link">Audio & Video</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <article class="main-content">
+
+                    <!-- Forms Introduction -->
+                    <section id="forms" class="lesson-section">
+                        <h2>📝 HTML Forms</h2>
+                        <p>Forms ব্যবহারকারীর কাছ থেকে data সংগ্রহ করতে ব্যবহৃত হয়। Login, Registration, Contact forms
+                            সব form দিয়ে তৈরি।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="string">"/submit"</span> <span class="attr">method</span>=<span class="string">"POST"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="string">"name"</span><span class="tag">&gt;</span>নাম:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"name"</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="string">"email"</span><span class="tag">&gt;</span>ইমেইল:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">id</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span><span class="tag">&gt;</span>জমা দিন<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="demo-container">
+                            <div class="demo-header"><span class="demo-title">Live Demo</span></div>
+                            <div class="demo-preview">
+                                <form style="display: flex; flex-direction: column; gap: 1rem; max-width: 300px;">
+                                    <div>
+                                        <label for="demo-name"
+                                            style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">নাম:</label>
+                                        <input type="text" id="demo-name" placeholder="আপনার নাম"
+                                            style="width: 100%; padding: 0.75rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem; color: var(--text-primary);">
+                                    </div>
+                                    <div>
+                                        <label for="demo-email"
+                                            style="display: block; margin-bottom: 0.5rem; color: var(--text-secondary);">ইমেইল:</label>
+                                        <input type="email" id="demo-email" placeholder="email@example.com"
+                                            style="width: 100%; padding: 0.75rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem; color: var(--text-primary);">
+                                    </div>
+                                    <button type="button" class="btn btn-primary" style="align-self: flex-start;">জমা
+                                        দিন</button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Input Types -->
+                    <section id="input-types" class="lesson-section">
+                        <h2>🔤 HTML5 Input Types</h2>
+                        <p>HTML5 এ ২০+ নতুন input type এসেছে। Browser automatically validation এবং keyboard optimize
+                            করে।</p>
+
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>উদ্দেশ্য</th>
+                                        <th>উদাহরণ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>text</code></td>
+                                        <td>সাধারণ text</td>
+                                        <td><input type="text" placeholder="Text"
+                                                style="padding: 0.25rem; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-primary);">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>email</code></td>
+                                        <td>Email validation</td>
+                                        <td><input type="email" placeholder="email@..."
+                                                style="padding: 0.25rem; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-primary);">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>password</code></td>
+                                        <td>Hidden text</td>
+                                        <td><input type="password" value="secret"
+                                                style="padding: 0.25rem; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-primary);">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>number</code></td>
+                                        <td>সংখ্যা</td>
+                                        <td><input type="number" value="10"
+                                                style="padding: 0.25rem; width: 80px; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-primary);">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>date</code></td>
+                                        <td>তারিখ picker</td>
+                                        <td><input type="date"
+                                                style="padding: 0.25rem; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-primary);">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>color</code></td>
+                                        <td>রঙ picker</td>
+                                        <td><input type="color" value="#6366f1" style="width: 40px; height: 30px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>range</code></td>
+                                        <td>Slider</td>
+                                        <td><input type="range" min="0" max="100"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tel</code></td>
+                                        <td>ফোন নম্বর</td>
+                                        <td><input type="tel" placeholder="+880..."
+                                                style="padding: 0.25rem; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-primary);">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>url</code></td>
+                                        <td>URL</td>
+                                        <td><input type="url" placeholder="https://..."
+                                                style="padding: 0.25rem; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-primary);">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>search</code></td>
+                                        <td>সার্চ বক্স</td>
+                                        <td><input type="search" placeholder="Search..."
+                                                style="padding: 0.25rem; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-primary);">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <span class="alert-icon">💡</span>
+                            <div class="alert-content">
+                                <h4>Mobile Tip</h4>
+                                <p>সঠিক input type ব্যবহার করলে mobile এ সঠিক keyboard দেখায় (email এ @, number এ
+                                    numpad)।</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Form Validation -->
+                    <section id="form-validation" class="lesson-section">
+                        <h2>✅ HTML5 Form Validation</h2>
+                        <p>HTML5 built-in validation attributes দিয়ে JavaScript ছাড়াই form validate করা যায়।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- Required field --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Min/Max length --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">minlength</span>=<span class="string">"3"</span> <span class="attr">maxlength</span>=<span class="string">"20"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Pattern (Regex) --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">pattern</span>=<span class="string">"[A-Za-z]+"</span> <span class="attr">title</span>=<span class="string">"শুধু অক্ষর"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Number range --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">min</span>=<span class="string">"1"</span> <span class="attr">max</span>=<span class="string">"100"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Placeholder text --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"আপনার নাম লিখুন"</span><span class="tag">&gt;</span></code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Lists -->
+                    <section id="lists" class="lesson-section">
+                        <h2>📋 Lists</h2>
+                        <p>HTML এ তিন ধরনের list আছে: Ordered, Unordered এবং Description List।</p>
+
+                        <div class="info-cards grid-2">
+                            <div class="info-card">
+                                <h4>Unordered List <code>&lt;ul&gt;</code></h4>
+                                <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                    <li>Item One</li>
+                                    <li>Item Two</li>
+                                    <li>Item Three</li>
+                                </ul>
+                            </div>
+                            <div class="info-card">
+                                <h4>Ordered List <code>&lt;ol&gt;</code></h4>
+                                <ol style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                    <li>First Step</li>
+                                    <li>Second Step</li>
+                                    <li>Third Step</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- Description List --&gt;</span>
+<span class="tag">&lt;dl&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>HTML<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>HyperText Markup Language<span class="tag">&lt;/dd&gt;</span>
+  
+  <span class="tag">&lt;dt&gt;</span>CSS<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>Cascading Style Sheets<span class="tag">&lt;/dd&gt;</span>
+<span class="tag">&lt;/dl&gt;</span></code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Tables -->
+                    <section id="tables" class="lesson-section">
+                        <h2>📊 Tables</h2>
+                        <p>Tables structured data প্রদর্শনের জন্য ব্যবহৃত হয়। Row এবং column এ data সাজানো হয়।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="tag">&lt;table&gt;</span>
+  <span class="tag">&lt;thead&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;th&gt;</span>নাম<span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;th&gt;</span>বয়স<span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;th&gt;</span>শহর<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/thead&gt;</span>
+  <span class="tag">&lt;tbody&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;td&gt;</span>রহিম<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>২৫<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>ঢাকা<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;td&gt;</span>করিম<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>৩০<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>চট্টগ্রাম<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/tbody&gt;</span>
+<span class="tag">&lt;/table&gt;</span></code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Semantic HTML -->
+                    <section id="semantic" class="lesson-section">
+                        <h2>🏗️ Semantic HTML5</h2>
+                        <p>Semantic elements content এর অর্থ বোঝায়। SEO এবং Accessibility এর জন্য গুরুত্বপূর্ণ।</p>
+
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <h4><code>&lt;header&gt;</code></h4>
+                                <p>পেজ বা সেকশনের header - logo, navigation ইত্যাদি</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;nav&gt;</code></h4>
+                                <p>Navigation links এর জন্য</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;main&gt;</code></h4>
+                                <p>পেজের main content (একটিই থাকা উচিত)</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;article&gt;</code></h4>
+                                <p>স্বতন্ত্র content যেমন blog post, news article</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;section&gt;</code></h4>
+                                <p>Content এর thematic grouping</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;aside&gt;</code></h4>
+                                <p>পার্শ্ব content যেমন sidebar</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;footer&gt;</code></h4>
+                                <p>পেজ বা সেকশনের footer</p>
+                            </div>
+                            <div class="info-card">
+                                <h4><code>&lt;figure&gt;</code> / <code>&lt;figcaption&gt;</code></h4>
+                                <p>Image/diagram with caption</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Media Elements -->
+                    <section id="media" class="lesson-section">
+                        <h2>🎬 Audio & Video</h2>
+                        <p>HTML5 এ native audio এবং video support আছে। আর Flash লাগে না!</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- Video Element --&gt;</span>
+<span class="tag">&lt;video</span> <span class="attr">controls</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">poster</span>=<span class="string">"thumbnail.jpg"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span><span class="tag">&gt;</span>
+  আপনার browser video support করে না।
+<span class="tag">&lt;/video&gt;</span>
+
+<span class="comment">&lt;!-- Audio Element --&gt;</span>
+<span class="tag">&lt;audio</span> <span class="attr">controls</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/audio&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <h3>Video Attributes:</h3>
+                        <ul class="feature-list">
+                            <li><code>controls</code> - Play, pause, volume controls দেখায়</li>
+                            <li><code>autoplay</code> - Automatically চালু হয়</li>
+                            <li><code>muted</code> - Sound off</li>
+                            <li><code>loop</code> - Repeat হতে থাকে</li>
+                            <li><code>poster</code> - Thumbnail image</li>
+                        </ul>
+                    </section>
+
+                    <!-- Next Section -->
+                    <div class="next-section">
+                        <h3>🎉 চমৎকার!</h3>
+                        <p>Intermediate level সম্পন্ন! এখন Advanced HTML5 APIs শিখুন।</p>
+                        <a href="advanced.html" class="btn btn-primary btn-lg">
+                            <span>অ্যাডভান্সড Level</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 HTML5মাস্টার। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
