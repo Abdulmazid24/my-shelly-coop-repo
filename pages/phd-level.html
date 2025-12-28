@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PhD-Level HTML5 - Web Components, Service Workers, WebGL এবং Advanced Accessibility শিখুন।">
+    <title>PhD লেভেল HTML5 | HTML5 মাস্টারক্লাস</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/pages.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">HTML5<span class="logo-accent">মাস্টার</span></span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">হোম</a></li>
+                <li class="nav-item"><a href="basics.html" class="nav-link">বেসিক</a></li>
+                <li class="nav-item"><a href="intermediate.html" class="nav-link">ইন্টারমিডিয়েট</a></li>
+                <li class="nav-item"><a href="advanced.html" class="nav-link">অ্যাডভান্সড</a></li>
+                <li class="nav-item"><a href="phd-level.html" class="nav-link active">PhD লেভেল</a></li>
+                <li class="nav-item"><a href="playground.html" class="nav-link">প্লেগ্রাউন্ড</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                        </path>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span
+                        class="hamburger"></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">হোম</a><span>/</span><span>PhD লেভেল</span>
+            </div>
+            <div class="header-content">
+                <span class="level-badge level-phd">🎓 PhD লেভেল</span>
+                <h1>Expert HTML5 Topics</h1>
+                <p>Web Components, Service Workers, WebGL এবং WCAG Accessibility সহ সবচেয়ে advanced HTML5 concepts।</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="content-grid">
+                <aside class="sidebar">
+                    <div class="toc">
+                        <h3 class="toc-title">বিষয়বস্তু</h3>
+                        <ul class="toc-list">
+                            <li><a href="#web-components" class="toc-link active">Web Components</a></li>
+                            <li><a href="#custom-elements" class="toc-link">Custom Elements</a></li>
+                            <li><a href="#shadow-dom" class="toc-link">Shadow DOM</a></li>
+                            <li><a href="#templates" class="toc-link">Templates & Slots</a></li>
+                            <li><a href="#service-workers" class="toc-link">Service Workers</a></li>
+                            <li><a href="#web-workers" class="toc-link">Web Workers</a></li>
+                            <li><a href="#accessibility" class="toc-link">WCAG Accessibility</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <article class="main-content">
+
+                    <!-- Web Components Overview -->
+                    <section id="web-components" class="lesson-section">
+                        <h2>🧩 Web Components</h2>
+                        <p>Web Components হলো reusable, encapsulated HTML elements তৈরির platform। তিনটি মূল technology
+                            নিয়ে গঠিত:</p>
+
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <h4>1. Custom Elements</h4>
+                                <p>নিজের HTML tag তৈরি করুন যেমন <code>&lt;my-button&gt;</code></p>
+                            </div>
+                            <div class="info-card">
+                                <h4>2. Shadow DOM</h4>
+                                <p>Encapsulated DOM এবং styling - বাইরের CSS affect করে না</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>3. HTML Templates</h4>
+                                <p><code>&lt;template&gt;</code> এবং <code>&lt;slot&gt;</code> দিয়ে reusable markup</p>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success">
+                            <span class="alert-icon">✅</span>
+                            <div class="alert-content">
+                                <h4>কেন Web Components?</h4>
+                                <p>Framework ছাড়াই reusable components তৈরি করুন। React, Vue, Angular সবার সাথে কাজ
+                                    করে!</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Custom Elements -->
+                    <section id="custom-elements" class="lesson-section">
+                        <h2>🏷️ Custom Elements</h2>
+                        <p>নিজের HTML element class তৈরি করে browser এ register করুন।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">JavaScript</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">// Custom Element Class</span>
+class MyGreeting extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  <span class="comment">// Called when element added to DOM</span>
+  connectedCallback() {
+    const name = this.getAttribute('name') || 'World';
+    this.shadowRoot.innerHTML = `
+      <style>
+        .greeting {
+          padding: 1rem;
+          background: linear-gradient(135deg, #6366f1, #8b5cf6);
+          color: white;
+          border-radius: 8px;
+        }
+      </style>
+      <div class="greeting">
+        <h3>Hello, ${name}! 👋</h3>
+      </div>
+    `;
+  }
+
+  <span class="comment">// Watch for attribute changes</span>
+  static get observedAttributes() {
+    return ['name'];
+  }
+
+  attributeChangedCallback(name, oldVal, newVal) {
+    if (oldVal !== newVal) {
+      this.connectedCallback();
+    }
+  }
+}
+
+<span class="comment">// Register the element</span>
+customElements.define('my-greeting', MyGreeting);</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML Usage</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- Custom element ব্যবহার --&gt;</span>
+<span class="tag">&lt;my-greeting</span> <span class="attr">name</span>=<span class="string">"রহিম"</span><span class="tag">&gt;&lt;/my-greeting&gt;</span>
+<span class="tag">&lt;my-greeting</span> <span class="attr">name</span>=<span class="string">"করিম"</span><span class="tag">&gt;&lt;/my-greeting&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-content">
+                                <h4>Naming Convention</h4>
+                                <p>Custom element নামে অবশ্যই hyphen (-) থাকতে হবে। যেমন: <code>my-element</code>,
+                                    <code>user-card</code></p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Shadow DOM -->
+                    <section id="shadow-dom" class="lesson-section">
+                        <h2>👻 Shadow DOM</h2>
+                        <p>Shadow DOM encapsulated DOM tree তৈরি করে। Component এর CSS বাইরে leak হয় না।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">JavaScript</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code>const host = document.getElementById('myHost');
+
+<span class="comment">// Create Shadow Root</span>
+const shadow = host.attachShadow({ mode: 'open' });
+<span class="comment">// mode: 'open' - JavaScript দিয়ে access করা যায়</span>
+<span class="comment">// mode: 'closed' - Access করা যায় না</span>
+
+<span class="comment">// Shadow DOM এ content যোগ করুন</span>
+shadow.innerHTML = `
+  <style>
+    /* এই CSS শুধু shadow DOM এ কাজ করবে */
+    p { color: #6366f1; font-weight: bold; }
+  </style>
+  <p>Shadow DOM Content!</p>
+`;
+
+<span class="comment">// Access shadow root (if open)</span>
+console.log(host.shadowRoot); <span class="comment">// Shadow DOM</span></code></pre>
+                            </div>
+                        </div>
+
+                        <h3>Shadow DOM vs Light DOM:</h3>
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>বিষয়</th>
+                                        <th>Light DOM</th>
+                                        <th>Shadow DOM</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CSS</td>
+                                        <td>Global, সব জায়গায় effect করে</td>
+                                        <td>Encapsulated, শুধু shadow এ</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Access</td>
+                                        <td><code>document.querySelector()</code></td>
+                                        <td><code>element.shadowRoot</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Styling</td>
+                                        <td>বাইরের CSS দিয়ে style হয়</td>
+                                        <td>CSS Variables দিয়ে customize</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Templates & Slots -->
+                    <section id="templates" class="lesson-section">
+                        <h2>📋 Templates & Slots</h2>
+                        <p><code>&lt;template&gt;</code> reusable markup, <code>&lt;slot&gt;</code> content projection
+                            এর জন্য।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- Template define করুন --&gt;</span>
+<span class="tag">&lt;template</span> <span class="attr">id</span>=<span class="string">"card-template"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;style&gt;</span>
+    .card { padding: 1rem; border: 1px solid #ccc; }
+    .card-header { font-weight: bold; }
+  <span class="tag">&lt;/style&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"card"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"card-header"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;slot</span> <span class="attr">name</span>=<span class="string">"title"</span><span class="tag">&gt;</span>Default Title<span class="tag">&lt;/slot&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"card-body"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;slot&gt;</span>Default content<span class="tag">&lt;/slot&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/template&gt;</span>
+
+<span class="comment">&lt;!-- Custom element এ ব্যবহার --&gt;</span>
+<span class="tag">&lt;my-card&gt;</span>
+  <span class="tag">&lt;span</span> <span class="attr">slot</span>=<span class="string">"title"</span><span class="tag">&gt;</span>Custom Title<span class="tag">&lt;/span&gt;</span>
+  <span class="tag">&lt;p&gt;</span>This is the card content.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/my-card&gt;</span></code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Service Workers -->
+                    <section id="service-workers" class="lesson-section">
+                        <h2>⚙️ Service Workers</h2>
+                        <p>Service Workers browser এ background script চালায়। Offline support এবং PWA এর জন্য
+                            essential।</p>
+
+                        <div class="alert alert-info">
+                            <span class="alert-icon">💡</span>
+                            <div class="alert-content">
+                                <h4>PWA (Progressive Web App)</h4>
+                                <p>Service Worker + Manifest = ওয়েবসাইট native app এর মতো কাজ করে, offline support সহ!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">JavaScript - Registration</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">// main.js - Register service worker</span>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(registration => {
+      console.log('SW registered:', registration.scope);
+    })
+    .catch(error => {
+      console.error('SW registration failed:', error);
+    });
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">JavaScript - sw.js</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code>const CACHE_NAME = 'v1';
+const urlsToCache = ['/', '/styles/main.css', '/js/app.js'];
+
+<span class="comment">// Install event - cache files</span>
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(urlsToCache))
+  );
+});
+
+<span class="comment">// Fetch event - serve from cache</span>
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => response || fetch(event.request))
+  );
+});</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Web Workers -->
+                    <section id="web-workers" class="lesson-section">
+                        <h2>🔧 Web Workers</h2>
+                        <p>Heavy computation background thread এ চালান। Main thread block হয় না, UI smooth থাকে।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">JavaScript - Main Thread</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">// Create worker</span>
+const worker = new Worker('worker.js');
+
+<span class="comment">// Send message to worker</span>
+worker.postMessage({ numbers: [1, 2, 3, 4, 5] });
+
+<span class="comment">// Receive result</span>
+worker.onmessage = function(e) {
+  console.log('Sum:', e.data.sum);
+};
+
+<span class="comment">// Handle errors</span>
+worker.onerror = function(e) {
+  console.error('Worker error:', e.message);
+};</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">JavaScript - worker.js</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">// Receive message from main thread</span>
+self.onmessage = function(e) {
+  const numbers = e.data.numbers;
+  const sum = numbers.reduce((a, b) => a + b, 0);
+  
+  <span class="comment">// Send result back</span>
+  self.postMessage({ sum: sum });
+};</code></pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Accessibility -->
+                    <section id="accessibility" class="lesson-section">
+                        <h2>♿ WCAG Accessibility</h2>
+                        <p>WCAG (Web Content Accessibility Guidelines) সব ব্যবহারকারীর জন্য accessible website তৈরির
+                            standard।</p>
+
+                        <h3>ARIA (Accessible Rich Internet Applications)</h3>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- ARIA Roles --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">role</span>=<span class="string">"navigation"</span> <span class="attr">aria-label</span>=<span class="string">"Main Menu"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">role</span>=<span class="string">"alert"</span><span class="tag">&gt;</span>Important message<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- ARIA States --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">aria-expanded</span>=<span class="string">"false"</span><span class="tag">&gt;</span>Menu<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">aria-invalid</span>=<span class="string">"true"</span> <span class="attr">aria-describedby</span>=<span class="string">"error-msg"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Skip Links --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"#main-content"</span> <span class="attr">class</span>=<span class="string">"skip-link"</span><span class="tag">&gt;</span>
+  Skip to main content
+<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Focus Management --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">tabindex</span>=<span class="string">"0"</span><span class="tag">&gt;</span>Focusable div<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">tabindex</span>=<span class="string">"-1"</span><span class="tag">&gt;</span>Programmatically focusable<span class="tag">&lt;/div&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <h3>Accessibility Checklist:</h3>
+                        <ul class="feature-list">
+                            <li>✅ সব images এ meaningful <code>alt</code> text</li>
+                            <li>✅ Proper heading hierarchy (h1 → h2 → h3)</li>
+                            <li>✅ Sufficient color contrast (4.5:1 ratio)</li>
+                            <li>✅ Keyboard navigation সাপোর্ট</li>
+                            <li>✅ Form inputs এ <code>&lt;label&gt;</code> যুক্ত</li>
+                            <li>✅ Focus states visible</li>
+                            <li>✅ Skip navigation link</li>
+                            <li>✅ Error messages clear ও descriptive</li>
+                        </ul>
+                    </section>
+
+                    <!-- Congratulations -->
+                    <div class="next-section">
+                        <h3>🎓 অভিনন্দন! আপনি HTML5 মাস্টার!</h3>
+                        <p>আপনি সব levels সম্পন্ন করেছেন। এখন Code Playground এ practice করুন!</p>
+                        <a href="playground.html" class="btn btn-primary btn-lg">
+                            <span>Code Playground</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 HTML5মাস্টার। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
