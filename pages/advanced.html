@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="HTML5 অ্যাডভান্সড APIs - Canvas, SVG, Geolocation, Web Storage এবং Drag & Drop শিখুন।">
+    <title>অ্যাডভান্সড HTML5 APIs | HTML5 মাস্টারক্লাস</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/pages.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">HTML5<span class="logo-accent">মাস্টার</span></span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">হোম</a></li>
+                <li class="nav-item"><a href="basics.html" class="nav-link">বেসিক</a></li>
+                <li class="nav-item"><a href="intermediate.html" class="nav-link">ইন্টারমিডিয়েট</a></li>
+                <li class="nav-item"><a href="advanced.html" class="nav-link active">অ্যাডভান্সড</a></li>
+                <li class="nav-item"><a href="phd-level.html" class="nav-link">PhD লেভেল</a></li>
+                <li class="nav-item"><a href="playground.html" class="nav-link">প্লেগ্রাউন্ড</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+                        </path>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span
+                        class="hamburger"></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">হোম</a><span>/</span><span>অ্যাডভান্সড</span>
+            </div>
+            <div class="header-content">
+                <span class="level-badge level-advanced">⚡ অ্যাডভান্সড লেভেল</span>
+                <h1>HTML5 APIs & Graphics</h1>
+                <p>Canvas, SVG, Geolocation, Web Storage এবং Drag & Drop API সহ powerful HTML5 features শিখুন।</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="content-grid">
+                <aside class="sidebar">
+                    <div class="toc">
+                        <h3 class="toc-title">বিষয়বস্তু</h3>
+                        <ul class="toc-list">
+                            <li><a href="#canvas" class="toc-link active">Canvas API</a></li>
+                            <li><a href="#svg" class="toc-link">SVG Graphics</a></li>
+                            <li><a href="#geolocation" class="toc-link">Geolocation</a></li>
+                            <li><a href="#storage" class="toc-link">Web Storage</a></li>
+                            <li><a href="#drag-drop" class="toc-link">Drag & Drop</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <article class="main-content">
+
+                    <!-- Canvas API -->
+                    <section id="canvas" class="lesson-section">
+                        <h2>🎨 Canvas API</h2>
+                        <p>Canvas element JavaScript দিয়ে 2D graphics আঁকতে দেয়। Games, charts, animations তৈরিতে
+                            ব্যবহৃত হয়।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="tag">&lt;canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"300"</span><span class="tag">&gt;</span>
+  Canvas সাপোর্ট করে না
+<span class="tag">&lt;/canvas&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+  <span class="comment">// Canvas context নিন</span>
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+
+  <span class="comment">// Rectangle আঁকুন</span>
+  ctx.fillStyle = '#6366f1';
+  ctx.fillRect(50, 50, 150, 100);
+
+  <span class="comment">// Circle আঁকুন</span>
+  ctx.beginPath();
+  ctx.arc(300, 100, 50, 0, Math.PI * 2);
+  ctx.fillStyle = '#06b6d4';
+  ctx.fill();
+
+  <span class="comment">// Line আঁকুন</span>
+  ctx.beginPath();
+  ctx.moveTo(50, 200);
+  ctx.lineTo(350, 200);
+  ctx.strokeStyle = '#f472b6';
+  ctx.lineWidth = 3;
+  ctx.stroke();
+<span class="tag">&lt;/script&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="demo-container">
+                            <div class="demo-header"><span class="demo-title">Live Canvas Demo</span></div>
+                            <div class="demo-preview" style="text-align: center;">
+                                <canvas id="demoCanvas" width="350" height="150"
+                                    style="border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary);"></canvas>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const canvas = document.getElementById('demoCanvas');
+                                if (canvas) {
+                                    const ctx = canvas.getContext('2d');
+                                    ctx.fillStyle = '#6366f1';
+                                    ctx.fillRect(30, 30, 80, 60);
+                                    ctx.beginPath();
+                                    ctx.arc(180, 60, 35, 0, Math.PI * 2);
+                                    ctx.fillStyle = '#06b6d4';
+                                    ctx.fill();
+                                    ctx.fillStyle = '#f472b6';
+                                    ctx.font = '18px Inter';
+                                    ctx.fillText('Canvas!', 260, 70);
+                                }
+                            });
+                        </script>
+                    </section>
+
+                    <!-- SVG -->
+                    <section id="svg" class="lesson-section">
+                        <h2>🔷 SVG Graphics</h2>
+                        <p>SVG (Scalable Vector Graphics) XML-based vector image format। যেকোনো size এ sharp থাকে।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="tag">&lt;svg</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 200 200"</span><span class="tag">&gt;</span>
+  <span class="comment">&lt;!-- Rectangle --&gt;</span>
+  <span class="tag">&lt;rect</span> <span class="attr">x</span>=<span class="string">"10"</span> <span class="attr">y</span>=<span class="string">"10"</span> <span class="attr">width</span>=<span class="string">"80"</span> <span class="attr">height</span>=<span class="string">"60"</span> 
+        <span class="attr">fill</span>=<span class="string">"#6366f1"</span> <span class="attr">rx</span>=<span class="string">"8"</span><span class="tag">/&gt;</span>
+
+  <span class="comment">&lt;!-- Circle --&gt;</span>
+  <span class="tag">&lt;circle</span> <span class="attr">cx</span>=<span class="string">"150"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"40"</span> <span class="attr">fill</span>=<span class="string">"#06b6d4"</span><span class="tag">/&gt;</span>
+
+  <span class="comment">&lt;!-- Line --&gt;</span>
+  <span class="tag">&lt;line</span> <span class="attr">x1</span>=<span class="string">"10"</span> <span class="attr">y1</span>=<span class="string">"150"</span> <span class="attr">x2</span>=<span class="string">"190"</span> <span class="attr">y2</span>=<span class="string">"150"</span> 
+        <span class="attr">stroke</span>=<span class="string">"#f472b6"</span> <span class="attr">stroke-width</span>=<span class="string">"3"</span><span class="tag">/&gt;</span>
+
+  <span class="comment">&lt;!-- Text --&gt;</span>
+  <span class="tag">&lt;text</span> <span class="attr">x</span>=<span class="string">"100"</span> <span class="attr">y</span>=<span class="string">"180"</span> <span class="attr">text-anchor</span>=<span class="string">"middle"</span> 
+        <span class="attr">fill</span>=<span class="string">"#f8fafc"</span><span class="tag">&gt;</span>SVG Text<span class="tag">&lt;/text&gt;</span>
+<span class="tag">&lt;/svg&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="demo-container">
+                            <div class="demo-header"><span class="demo-title">Live SVG Demo</span></div>
+                            <div class="demo-preview" style="text-align: center;">
+                                <svg width="300" height="120" viewBox="0 0 300 120">
+                                    <rect x="10" y="10" width="70" height="50" fill="#6366f1" rx="8" />
+                                    <circle cx="140" cy="40" r="30" fill="#06b6d4" />
+                                    <polygon points="220,10 260,50 220,90 180,50" fill="#f472b6" />
+                                    <text x="150" y="110" text-anchor="middle" fill="currentColor"
+                                        font-family="Inter">SVG Shapes!</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <h3>Canvas vs SVG:</h3>
+                        <div class="comparison-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>বিষয়</th>
+                                        <th>Canvas</th>
+                                        <th>SVG</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td>Raster (Pixel-based)</td>
+                                        <td>Vector</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scaling</td>
+                                        <td>Pixelated হয়ে যায়</td>
+                                        <td>সব size এ sharp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Use Case</td>
+                                        <td>Games, complex animations</td>
+                                        <td>Icons, logos, diagrams</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DOM Access</td>
+                                        <td>নেই</td>
+                                        <td>প্রতিটি element DOM এ আছে</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Geolocation -->
+                    <section id="geolocation" class="lesson-section">
+                        <h2>📍 Geolocation API</h2>
+                        <p>ব্যবহারকারীর location জানতে পারেন। Maps, weather apps এ ব্যবহৃত হয়।</p>
+
+                        <div class="alert alert-warning">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-content">
+                                <h4>Permission Required</h4>
+                                <p>ব্যবহারকারীকে অবশ্যই permission দিতে হবে। HTTPS এ কাজ করে।</p>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">JavaScript</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">// Check if supported</span>
+if ('geolocation' in navigator) {
+  
+  navigator.geolocation.getCurrentPosition(
+    <span class="comment">// Success callback</span>
+    function(position) {
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      const accuracy = position.coords.accuracy;
+      
+      console.log(`Latitude: ${lat}`);
+      console.log(`Longitude: ${lng}`);
+      console.log(`Accuracy: ${accuracy} meters`);
+    },
+    <span class="comment">// Error callback</span>
+    function(error) {
+      console.error('Error:', error.message);
+    },
+    <span class="comment">// Options</span>
+    {
+      enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 0
+    }
+  );
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="demo-container">
+                            <div class="demo-header"><span class="demo-title">Try Geolocation</span></div>
+                            <div class="demo-preview">
+                                <button id="getLocation" class="btn btn-primary" onclick="getLocationDemo()">
+                                    📍 আমার Location দেখান
+                                </button>
+                                <p id="locationResult" style="margin-top: 1rem; color: var(--text-secondary);"></p>
+                            </div>
+                        </div>
+
+                        <script>
+                            function getLocationDemo() {
+                                const result = document.getElementById('locationResult');
+                                if ('geolocation' in navigator) {
+                                    result.textContent = 'Loading...';
+                                    navigator.geolocation.getCurrentPosition(
+                                        pos => {
+                                            result.innerHTML = `<strong>Latitude:</strong> ${pos.coords.latitude.toFixed(6)}<br>
+                        <strong>Longitude:</strong> ${pos.coords.longitude.toFixed(6)}<br>
+                        <strong>Accuracy:</strong> ${pos.coords.accuracy.toFixed(0)} meters`;
+                                        },
+                                        err => result.textContent = `Error: ${err.message}`
+                                    );
+                                } else {
+                                    result.textContent = 'Geolocation not supported';
+                                }
+                            }
+                        </script>
+                    </section>
+
+                    <!-- Web Storage -->
+                    <section id="storage" class="lesson-section">
+                        <h2>💾 Web Storage API</h2>
+                        <p>Browser এ data store করুন। Cookies এর চেয়ে সহজ এবং বেশি storage।</p>
+
+                        <div class="info-cards grid-2">
+                            <div class="info-card">
+                                <h4>localStorage</h4>
+                                <p>Permanent storage। Browser বন্ধ করলেও data থাকে। ~5MB limit।</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>sessionStorage</h4>
+                                <p>Tab/Session specific। Tab বন্ধ করলে data মুছে যায়।</p>
+                            </div>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">JavaScript</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">// Store data</span>
+localStorage.setItem('username', 'রহিম');
+localStorage.setItem('settings', JSON.stringify({theme: 'dark'}));
+
+<span class="comment">// Retrieve data</span>
+const name = localStorage.getItem('username');
+const settings = JSON.parse(localStorage.getItem('settings'));
+
+<span class="comment">// Remove single item</span>
+localStorage.removeItem('username');
+
+<span class="comment">// Clear all</span>
+localStorage.clear();
+
+<span class="comment">// Check length</span>
+console.log(localStorage.length);</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="demo-container">
+                            <div class="demo-header"><span class="demo-title">Storage Demo</span></div>
+                            <div class="demo-preview">
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                                    <input type="text" id="storageInput" placeholder="কিছু লিখুন..."
+                                        style="padding: 0.75rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem; color: var(--text-primary); flex: 1; min-width: 200px;">
+                                    <button onclick="saveToStorage()" class="btn btn-primary">Save</button>
+                                    <button onclick="loadFromStorage()" class="btn btn-secondary">Load</button>
+                                </div>
+                                <p id="storageResult" style="margin-top: 1rem; color: var(--text-secondary);"></p>
+                            </div>
+                        </div>
+
+                        <script>
+                            function saveToStorage() {
+                                const value = document.getElementById('storageInput').value;
+                                localStorage.setItem('demoValue', value);
+                                document.getElementById('storageResult').textContent = 'Saved: ' + value;
+                            }
+                            function loadFromStorage() {
+                                const value = localStorage.getItem('demoValue') || 'Nothing saved yet';
+                                document.getElementById('storageResult').textContent = 'Loaded: ' + value;
+                            }
+                        </script>
+                    </section>
+
+                    <!-- Drag & Drop -->
+                    <section id="drag-drop" class="lesson-section">
+                        <h2>🖱️ Drag & Drop API</h2>
+                        <p>Native drag and drop functionality। File upload, list reordering এ ব্যবহৃত হয়।</p>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-lang">HTML + JavaScript</span>
+                                <button class="copy-btn" onclick="HTML5Master.copyCode(this)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                            <div class="code-content">
+                                <pre><code><span class="comment">&lt;!-- Draggable element --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">draggable</span>=<span class="string">"true"</span> <span class="attr">id</span>=<span class="string">"dragItem"</span><span class="tag">&gt;</span>Drag me!<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- Drop zone --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">id</span>=<span class="string">"dropZone"</span><span class="tag">&gt;</span>Drop here<span class="tag">&lt;/div&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+const item = document.getElementById('dragItem');
+const zone = document.getElementById('dropZone');
+
+item.addEventListener('dragstart', (e) => {
+  e.dataTransfer.setData('text/plain', e.target.id);
+});
+
+zone.addEventListener('dragover', (e) => {
+  e.preventDefault(); <span class="comment">// Allow drop</span>
+});
+
+zone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  const id = e.dataTransfer.getData('text/plain');
+  zone.appendChild(document.getElementById(id));
+});
+<span class="tag">&lt;/script&gt;</span></code></pre>
+                            </div>
+                        </div>
+
+                        <div class="demo-container">
+                            <div class="demo-header"><span class="demo-title">Drag & Drop Demo</span></div>
+                            <div class="demo-preview" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                                <div id="sourceZone"
+                                    style="flex: 1; min-width: 150px; min-height: 100px; padding: 1rem; border: 2px dashed var(--border-light); border-radius: 0.5rem;">
+                                    <div draggable="true" id="dragItem1"
+                                        style="padding: 0.75rem 1rem; background: var(--color-primary); color: white; border-radius: 0.5rem; cursor: grab; margin-bottom: 0.5rem;">
+                                        📦 Item 1</div>
+                                    <div draggable="true" id="dragItem2"
+                                        style="padding: 0.75rem 1rem; background: var(--color-secondary); color: white; border-radius: 0.5rem; cursor: grab;">
+                                        📦 Item 2</div>
+                                </div>
+                                <div id="targetZone"
+                                    style="flex: 1; min-width: 150px; min-height: 100px; padding: 1rem; border: 2px dashed var(--color-accent); border-radius: 0.5rem; background: rgba(6, 182, 212, 0.1);">
+                                    <p style="color: var(--text-muted); text-align: center;">Drop zone</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const items = document.querySelectorAll('[draggable="true"]');
+                                const zones = [document.getElementById('sourceZone'), document.getElementById('targetZone')];
+
+                                items.forEach(item => {
+                                    item.addEventListener('dragstart', e => {
+                                        e.dataTransfer.setData('text/plain', e.target.id);
+                                        e.target.style.opacity = '0.5';
+                                    });
+                                    item.addEventListener('dragend', e => e.target.style.opacity = '1');
+                                });
+
+                                zones.forEach(zone => {
+                                    if (zone) {
+                                        zone.addEventListener('dragover', e => { e.preventDefault(); zone.style.background = 'rgba(99, 102, 241, 0.2)'; });
+                                        zone.addEventListener('dragleave', e => zone.style.background = '');
+                                        zone.addEventListener('drop', e => {
+                                            e.preventDefault();
+                                            zone.style.background = '';
+                                            const id = e.dataTransfer.getData('text/plain');
+                                            const el = document.getElementById(id);
+                                            if (el) zone.appendChild(el);
+                                        });
+                                    }
+                                });
+                            });
+                        </script>
+                    </section>
+
+                    <!-- Next Section -->
+                    <div class="next-section">
+                        <h3>🎓 Expert হতে প্রস্তুত?</h3>
+                        <p>PhD-level advanced topics যেমন Web Components, Service Workers শিখুন!</p>
+                        <a href="phd-level.html" class="btn btn-primary btn-lg">
+                            <span>PhD Level</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 HTML5মাস্টার। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+
+</html>
